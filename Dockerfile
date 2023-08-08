@@ -14,6 +14,8 @@ RUN apt-get install -y --no-install-recommends libsm6
 RUN apt-get install -y --no-install-recommends libxrender1 
 RUN apt-get install -y --no-install-recommends libxext6 
 RUN apt-get install -y --no-install-recommends tabix 
+RUN apt-get install -y --no-install-recommends git
+
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
@@ -46,4 +48,20 @@ RUN pip install -U --no-cache-dir jupyter
 
 RUN python3 -m pip install Truvari
 
-ENV PYTHONPATH "${PYTHONPATH}:/code"
+
+WORKDIR /app
+# https://stackoverflow.com/questions/36996046/how-to-prevent-dockerfile-caching-git-clone
+# prevent cached git clone if repo main is updated
+# Github rate limits quite often
+# ADD https://api.github.com/repos/PankratzLab/NGS-TL/git/refs/heads/main version.json
+# use time instead
+ADD https://worldtimeapi.org/api/ip time.tmp
+
+RUN https://github.com/jlanej/cue.git
+WORKDIR /app/cue
+ENV PYTHONPATH "${PYTHONPATH}:/app/cue
+
+
+CMD ["/bin/bash"]
+
+
