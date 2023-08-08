@@ -31,7 +31,8 @@ RUN pip install -U --no-cache-dir matplotlib==3.2.1
 RUN pip install -U --no-cache-dir numpy==1.18.5 
 RUN pip install -U --no-cache-dir opencv-python==4.5.1.48 
 RUN pip install -U --no-cache-dir pandas==1.0.5 
-RUN pip install -U --no-cache-dir pycocotools==2.0.4 
+# https://github.com/cython/cython/issues/5539 switching from 2.0.4 to 2.0.6
+RUN pip install -U --no-cache-dir pycocotools==2.0.6 
 RUN pip install -U --no-cache-dir pyfaidx==0.5.9.5 
 RUN pip install -U --no-cache-dir pysam==0.16.0.1 
 RUN pip install -U --no-cache-dir pytabix==0.1 
