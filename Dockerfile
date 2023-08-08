@@ -59,7 +59,7 @@ ADD https://worldtimeapi.org/api/ip time.tmp
 
 RUN https://github.com/jlanej/cue.git
 WORKDIR /app/cue
-ENV PYTHONPATH "${PYTHONPATH}:/app/cue
+ENV PYTHONPATH "${PYTHONPATH}:/app/cue"
 
 
 CMD ["/bin/bash"]
