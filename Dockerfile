@@ -59,6 +59,9 @@ ADD https://worldtimeapi.org/api/ip time.tmp
 
 RUN https://github.com/jlanej/cue.git
 WORKDIR /app/cue
+RUN wget --directory-prefix=data/models/ https://storage.googleapis.com/cue-models/latest/cue.v2.pt
+
+
 ENV PYTHONPATH "${PYTHONPATH}:/app/cue"
 
 
