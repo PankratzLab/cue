@@ -15,6 +15,7 @@ RUN apt-get install -y --no-install-recommends libxrender1
 RUN apt-get install -y --no-install-recommends libxext6 
 RUN apt-get install -y --no-install-recommends tabix 
 RUN apt-get install -y --no-install-recommends git
+RUN apt-get install -y --no-install-recommends wget
 
 RUN rm -rf /var/lib/apt/lists/*
 
