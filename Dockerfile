@@ -37,7 +37,7 @@ RUN pip install -U --no-cache-dir pandas==1.0.5
 # https://github.com/cython/cython/issues/5539 switching from 2.0.4 to 2.0.6
 RUN pip install -U --no-cache-dir pycocotools==2.0.6 
 RUN pip install -U --no-cache-dir pyfaidx==0.5.9.5 
-RUN pip install -U --no-cache-dir pysam==0.16.0.1 
+RUN pip install -U --no-cache-dir pysam==0.21.0 
 RUN pip install -U --no-cache-dir pytabix==0.1 
 RUN pip install -U --no-cache-dir python-dateutil==2.8.1 
 RUN pip install -U --no-cache-dir pyyaml==5.3.1 
