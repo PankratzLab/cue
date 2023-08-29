@@ -323,7 +323,7 @@ def get_vcf_format_variant_file(vcf_fname, contigs, ctg_no_len=False):
                 vcf.write("##contig=<ID=%s,length=%d>\n" % (ctg.name, ctg.len))
             else:
                 vcf.write("##contig=<ID=%s>\n" % ctg.name)
-        vcf.write("#%s\n" % "\t".join(["CHROM", "POS", "ID", "REF", "ALT", "QUAL", "FILTER", "INFO", "FORMAT"]))
+        vcf.write("#%s\n" % "\t".join(["CHROM", "POS", "ID", "REF", "ALT", "QUAL", "FILTER", "INFO"]))
     vcf_file = VariantFile(vcf_fname)
     # SV fields
     vcf_file.header.info.add('END', number=1, type='Integer', description="End position of the variant "
