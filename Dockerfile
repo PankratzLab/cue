@@ -58,7 +58,7 @@ WORKDIR /app
 # use time instead
 ADD https://worldtimeapi.org/api/ip time.tmp
 
-RUN git clone https://github.com/jlanej/cue.git
+RUN git clone https://github.com/pankratzlab/cue.git
 WORKDIR /app/cue
 RUN wget --directory-prefix=data/models/ https://storage.googleapis.com/cue-models/latest/cue.v2.pt
 
